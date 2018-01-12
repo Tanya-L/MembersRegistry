@@ -1,7 +1,7 @@
 
 package dao;
 
-import entities.Member;
+import entities.Members;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -23,25 +23,25 @@ public class MemberFacade {
     }
 
 
-    public void create(Member entity) {
+    public void create(Members entity) {
         em.persist(entity);
     }
 
-    public void edit(Member entity) {
+    public void edit(Members entity) {
         em.merge(entity);
     }
 
-    public void remove(Member entity) {
+    public void remove(Members entity) {
         em.remove(em.merge(entity));
     }
 
-    public Member find(Object id) {
-        return em.find(Member.class, id);
+    public Members find(Object id) {
+        return em.find(Members.class, id);
     }
 
-    public List<Member> findAll() {
+    public List<Members> findAll() {
         javax.persistence.criteria.CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-        cq.select(cq.from(Member.class));
+        cq.select(cq.from(Members.class));
         return em.createQuery(cq).getResultList();
     }
 

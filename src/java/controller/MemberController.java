@@ -1,16 +1,10 @@
 package controller;
 
-import entities.Member;
+import entities.Members;
 import dao.MemberFacade;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Calendar;
 import java.util.Date;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 @Named(value = "memberController")
@@ -23,7 +17,7 @@ public class MemberController {
     private String gender;
     private Date birthDate;
     private Long phoneNumber;
-    private LocalDate registrationDate;
+
 //  private String keyword;
 // 
 //    public String getKeyword() {
@@ -94,16 +88,6 @@ public class MemberController {
         this.phoneNumber = phoneNumber;
     }
 
-    public LocalDate getRegistrationDate() {
-        return registrationDate;
-    }
-
-    public void setRegistrationDate(LocalDate registrationDate) {
-        this.registrationDate = LocalDate.now();
-    }
-
-    
-
     public MemberFacade getMf() {
         return mf;
     }
@@ -113,14 +97,13 @@ public class MemberController {
     }
 
     public String createNewMember() {
-        Member m = new Member();
+        Members m = new Members();
         m.setFirstName(firstName);
         m.setSurname(surname);
         m.setPhoneNumber(phoneNumber);
         m.setEmail(email);
         m.setBirthDate(birthDate);
         m.setGender(gender);
-        m.setRegistrationDate(registrationDate);
         mf.create(m);
         return "form";
 

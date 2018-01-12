@@ -1,23 +1,20 @@
 package entities;
 
 import java.io.Serializable;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
 
 /**
  *
  * @author Användare
  */
 @Entity
-public class Member implements Serializable {
+public class Members implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -29,19 +26,34 @@ public class Member implements Serializable {
     private String surname;
     private String email;
     private String gender;
+   
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date birthDate;
     private Long phoneNumber;
 
-    private LocalDate registrationDate;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date registrationDate;
 
-    public Member(String firstName, String surname, String email, Date birthDate, Long phoneNumber, String gender) {
+    public Members(String firstName, String surname, String email, Date birthDate, Long phoneNumber, String gender) {
         this.firstName = firstName;
         this.surname = surname;
         this.email = email;
         this.birthDate = birthDate;
         this.phoneNumber = phoneNumber;
         this.gender = gender;
-        this.registrationDate = LocalDate.now();
+        this.registrationDate = new Date();
+    }
+
+    public Members() {
+         this.registrationDate = new Date();
+    }
+
+    public Date getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(Date registrationDate) {
+        this.registrationDate = registrationDate;
     }
 
     public String getGender() {
@@ -52,12 +64,7 @@ public class Member implements Serializable {
         this.gender = gender;
     }
 
-   
-
-    public Member() {
-    }
-
-    public Long getId() {
+      public Long getId() {
         return id;
     }
 
@@ -105,22 +112,10 @@ public class Member implements Serializable {
         this.phoneNumber = phoneNumber;
     }
 
-    public LocalDate getRegistrationDate() {
-        return registrationDate;
-    }
-
-    public void setRegistrationDate(LocalDate registrationDate) {
-        this.registrationDate = registrationDate;
-    }
-
-   
-
-    
-
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 37 * hash + Objects.hashCode(this.id);
+        hash = 31 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -135,12 +130,12 @@ public class Member implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Member other = (Member) obj;
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        return true;
+        final Members other = (Members) obj;
+        return Objects.equals(this.id, other.id);
     }
+
+   
+    
 
     @Override
     public String toString() {

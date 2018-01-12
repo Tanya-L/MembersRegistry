@@ -40,10 +40,10 @@ public class MemberFacade {
     }
 
     public List<Members> findAll() {
-        javax.persistence.criteria.CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-        cq.select(cq.from(Members.class));
-        return em.createQuery(cq).getResultList();
+        
+        return em.createQuery("SELECT m FROM Members AS m").getResultList();
     }
 
+    
     
 }

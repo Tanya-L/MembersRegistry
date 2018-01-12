@@ -28,13 +28,19 @@
             <p:layoutUnit  position="west" size="175">
 
                 <h:form id="menuForm">
-                    <p:commandLink id="homeLink" ajax="false"  action="/index" value="Home"/>
+                    <p:commandLink id="homeLink" ajax="false"  action="/form" value="Home"/>
                     <br/>
-                    <p:commandLink id="registrationLink" ajax="false" action="/userRegistration" value="User Registration"/>
+                    <br/>
+                    <p:commandLink id="registrationLink" ajax="false" action="/form" value="Register New Member"/>
+                    <br/>
+                    <br/>
                     <p:commandLink id="delete" ajax="false"  action="/delete" value="Delete Member"/>
+                    <br/>
                     <br/>
                     <p:commandLink id="update" ajax="false"  action="/update" value="Update Member"/>
                     <br/>
+                    <br/>
+                     <p:commandLink id="show" ajax="false"  action="/show" value="Show All Members"/>
 
                 </h:form>  
             </p:layoutUnit>

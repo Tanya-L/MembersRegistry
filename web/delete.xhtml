@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <f:view contentType="text/html">
+        <h:head>
+            <title>Java Stars</title>
+
+        </h:head>
+        <h:body>
+            <ui:composition template="layout.xhtml"> 
+                <ui:define name="content">
+                    <h:form >
+
+
+                        <h2>Welcome to Java Stars Secret Club
+                            <br/>
+                            Please, choose id of member you would like to delete</h2>
+
+
+                        <p:messages id="messages" showDetail="true"/>
+
+                        <p:panelGrid columns="2"  style="margin-bottom:10px">
+
+                            <h:outputLabel for="chooseid" value="choose the id"/>
+                            <h:selectOneMenu value="#{memberController.id}">
+                                <f:selectItems value="#{memberController.memList}"/>
+                            </h:selectOneMenu>
+                            <h:commandButton value="Delete" action="#{memberController.deleteMember}"/>
+                        </p:panelGrid>
+                    </h:form>
+
+                </ui:define>
+            </ui:composition>    
+        </h:body>
+    </f:view>
+</html>

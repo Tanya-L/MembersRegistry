@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <f:view contentType="text/html">
+        <h:head>
+            <title>Java Stars</title>
+
+        </h:head>
+        <h:body>
+            <ui:composition template="layout.xhtml"> 
+                <ui:define name="content">
+                    <h:form>
+
+
+                        <h2>Welcome to Java Stars Secret Club
+                            <br/>
+                            Showing all members</h2>
+
+
+
+                        <p:panelGrid columns="2"  style="margin-bottom:10px">
+
+
+                            <p:dataTable var="members" value="#{memberController.fullList}">
+                                <p:column headerText="Id">
+                                    <h:outputText value="#{members.id}" />
+                                </p:column>
+
+                                <p:column headerText="First Name">
+                                    <h:outputText value="#{members.firstName}"/>
+                                      
+                                </p:column>
+
+                                <p:column headerText="Surname">
+                                    <h:outputText value="#{members.surname}" />
+                                </p:column>
+
+                                <p:column headerText="BirthDate">
+                                    <h:outputText value="#{members.birthDate}"  >
+                                  <f:convertDateTime pattern="yyyy-MM-dd" />
+                                    </h:outputText>
+                                    
+                                </p:column>
+
+                                <p:column headerText="Phone Number">
+                                    <h:outputText value="#{members.phoneNumber}" />
+                                </p:column>
+
+                                <p:column headerText="Registration Date">
+                                    <h:outputText value="#{members.registrationDate}" >
+                                 <f:convertDateTime pattern="yyyy-MM-dd" />
+                                    </h:outputText>
+                                    
+                                </p:column>
+
+                                <p:column headerText="Email">
+                                    <h:outputText value="#{members.email}" />
+                                </p:column>
+
+
+                            </p:dataTable>
+
+                        </p:panelGrid>
+                    </h:form>
+                </ui:define>
+            </ui:composition>    
+        </h:body>
+    </f:view>
+</html>

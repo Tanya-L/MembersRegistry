@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+
+    <h:head>
+
+        <title>JavaStars</title>
+
+    </h:head>
+
+    <h:body>
+        <p:layout fullPage="true">
+
+            <p:layoutUnit position="north" size="100" >
+                <h1>Java Stars Header</h1>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south" size="100" >
+                Created by MMPT team 2018
+            </p:layoutUnit>
+
+            <p:layoutUnit  position="west" size="175">
+
+                <h:form id="menuForm">
+                    <p:commandLink id="homeLink" ajax="false"  action="/index" value="Home"/>
+                    <br/>
+                    <p:commandLink id="registrationLink" ajax="false" action="/userRegistration" value="User Registration"/>
+                    <p:commandLink id="delete" ajax="false"  action="/delete" value="Delete Member"/>
+                    <br/>
+                    <p:commandLink id="update" ajax="false"  action="/update" value="Update Member"/>
+                    <br/>
+
+                </h:form>  
+            </p:layoutUnit>
+
+            <p:layoutUnit  position="center">
+                <ui:insert name="content"> <ui:include src="/form.xhtml"/>
+
+                </ui:insert>
+            </p:layoutUnit>
+
+        </p:layout>
+
+
+    </h:body>
+
+
+</html>

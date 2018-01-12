@@ -1,15 +1,16 @@
 package entities;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import utilities.Gender;
 
 /**
  *
@@ -28,18 +29,19 @@ public class Member implements Serializable {
     private String surname;
     private String email;
     private String gender;
-    private int birthYear;
+    private Date birthDate;
     private Long phoneNumber;
 
     private LocalDate registrationDate;
 
-    public Member(String firstName, String surname, String email, int birthYear, Long phoneNumber, String gender) {
+    public Member(String firstName, String surname, String email, Date birthDate, Long phoneNumber, String gender) {
         this.firstName = firstName;
         this.surname = surname;
         this.email = email;
-        this.birthYear = birthYear;
+        this.birthDate = birthDate;
         this.phoneNumber = phoneNumber;
         this.gender = gender;
+        this.registrationDate = LocalDate.now();
     }
 
     public String getGender() {
@@ -87,12 +89,12 @@ public class Member implements Serializable {
         this.email = email;
     }
 
-    public int getBirthYear() {
-        return birthYear;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirthYear(int birthYear) {
-        this.birthYear = birthYear;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public Long getPhoneNumber() {
@@ -110,6 +112,10 @@ public class Member implements Serializable {
     public void setRegistrationDate(LocalDate registrationDate) {
         this.registrationDate = registrationDate;
     }
+
+   
+
+    
 
     @Override
     public int hashCode() {
@@ -138,7 +144,7 @@ public class Member implements Serializable {
 
     @Override
     public String toString() {
-        return "Members{" + "id=" + id + ", firstName=" + firstName + ", surname=" + surname + ", email=" + email +  ", birthYear=" + birthYear + ", phoneNumber=" + phoneNumber + ", registrationDate=" + registrationDate + '}';
+        return "Members{" + "id=" + id + ", firstName=" + firstName + ", surname=" + surname + ", email=" + email +  ", birthDate=" + birthDate + ", phoneNumber=" + phoneNumber + ", registrationDate=" + registrationDate + '}';
     }
 
 }

@@ -2,9 +2,15 @@ package controller;
 
 import entities.Member;
 import dao.MemberFacade;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 @Named(value = "memberController")
@@ -15,10 +21,23 @@ public class MemberController {
     private String surname;
     private String email;
     private String gender;
-    private int birthYear;
+    private Date birthDate;
     private Long phoneNumber;
-    private LocalDate registrationDate = LocalDate.now();
-
+    private LocalDate registrationDate;
+//  private String keyword;
+// 
+//    public String getKeyword() {
+//        return keyword;
+//    }
+// 
+//    public void setKeyword(String keyword) {
+//        this.keyword = keyword;
+//    }
+//     
+//    public void search() {
+//        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"No results found with ", "'" + keyword + "'"));
+//    }
+    
     @Inject
     MemberFacade mf;
     
@@ -59,12 +78,12 @@ public class MemberController {
 
    
 
-    public int getBirthYear() {
-        return birthYear;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirthYear(int birthYear) {
-        this.birthYear = birthYear;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public Long getPhoneNumber() {
@@ -80,8 +99,10 @@ public class MemberController {
     }
 
     public void setRegistrationDate(LocalDate registrationDate) {
-        this.registrationDate = registrationDate;
+        this.registrationDate = LocalDate.now();
     }
+
+    
 
     public MemberFacade getMf() {
         return mf;
@@ -97,11 +118,11 @@ public class MemberController {
         m.setSurname(surname);
         m.setPhoneNumber(phoneNumber);
         m.setEmail(email);
-        m.setBirthYear(birthYear);
+        m.setBirthDate(birthDate);
         m.setGender(gender);
-        // m.setRegistrationDate(registrationDate);
+        m.setRegistrationDate(registrationDate);
         mf.create(m);
-        return "index";
+        return "form";
 
     }
 }

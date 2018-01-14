@@ -161,7 +161,7 @@ public class MemberController {
 
     public void deleteMember() {
         mf.remove(mf.find(id));
-        info("Member delete from our club");
+        info("Member information delete");
         
     }
 

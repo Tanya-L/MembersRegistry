@@ -29,7 +29,7 @@
                             
                             <h:outputLabel for="chooseid" value="Choose the id"/>
                             <h:selectOneMenu value="#{memberController.id}" style="width:125px">
-                                <f:selectItem itemLabel="Select id" itemValue="" />
+                                <f:selectItem itemLabel="Select id" itemValue="-1" />
                                 <f:selectItems value="#{memberController.memList}"/>
                             </h:selectOneMenu>
                         </h:panelGrid>

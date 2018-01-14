@@ -139,26 +139,31 @@ public class MemberController {
         m.setBirthDate(birthDate);
         m.setGender(gender);
         mf.create(m);
+        clearForm();
+        info("New member created and saved");
+        return "form";
+
+    }
+    
+    private void clearForm (){
         firstName=null;
         surname=null;
         phoneNumber=null;
         email=null;
         birthDate=null;
         gender=null;
-        info("New member created and saved");
-        return "form";
-
     }
-    
-//    public void onload() { 
-//        loadMembers();
-//    }
     
     public void info(String s) {
         FacesContext.getCurrentInstance().addMessage(null, 
                 new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", s));
     }
 
+    public void error(String s) {
+        FacesContext.getCurrentInstance().addMessage(null, 
+                new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", s));
+    }
+    
     public void deleteMember() {
         mf.remove(mf.find(id));
         info("Member information delete");
@@ -166,6 +171,11 @@ public class MemberController {
     }
 
     public String updateMember() {
+        if (id == -1) {
+            this.error("You can not update now, select an id first");
+            return "form";
+        }
+        
         Members m = new Members();
         
         m.setId(id);
@@ -176,18 +186,18 @@ public class MemberController {
         m.setBirthDate(birthDate);
         m.setGender(gender);
         mf.edit(m);
-        firstName=null;
-        surname=null;
-        phoneNumber=null;
-        email=null;
-        birthDate=null;
-        gender=null;
+        clearForm();
         info("Member information update");
         return "form";
 
     }
 
     public void loadMembers() {
+        if (id == -1) {
+            clearForm();
+            return;
+        }
+        
         mem = mf.find(id);
         this.firstName = mem.getFirstName();
         this.surname = mem.getSurname();

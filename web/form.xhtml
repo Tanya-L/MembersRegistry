@@ -23,12 +23,12 @@
                     Please, register a new member</h2>
            
 
-                    <p:messages id="messages" showDetail="true"/>
+                    <p:messages id="messages" showSummary="false" showDetail="true" />
 
                     <p:panelGrid columns="2"  style="margin-bottom:10px">
 
                         <h:outputText value="First Name: " />
-                        <p:inputText id="firstName" value="#{memberController.firstName}" placeholder="First Name"  />
+                        <p:inputText id="firstName" value="#{memberController.firstName}" placeholder="First Name" requiredMessage="Mobile Name is mandatory" />
 
 
                         <h:outputText value="Surname: " />

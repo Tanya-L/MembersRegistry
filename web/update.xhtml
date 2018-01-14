@@ -66,10 +66,12 @@
                             <f:selectItem itemLabel="MALE" itemValue="male"/> 
                             <f:selectItem itemLabel="OTHER" itemValue="other"/>        
                         </p:selectOneRadio>
-
-                        <h:commandButton value="Update" action="#{memberController.updateMember()}"/>
                  
                     </p:panelGrid>
+                    
+                    <p:commandButton value="Update" ajax="false" icon="ui-icon-check" action="#{memberController.updateMember()}"/>
+
+                    
                 </h:form>
             </ui:define>
         </ui:composition>    

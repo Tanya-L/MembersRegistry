@@ -150,6 +150,10 @@ public class MemberController {
 
     }
     
+//    public void onload() { 
+//        loadMembers();
+//    }
+    
     public void info(String s) {
         FacesContext.getCurrentInstance().addMessage(null, 
                 new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", s));
@@ -163,6 +167,8 @@ public class MemberController {
 
     public String updateMember() {
         Members m = new Members();
+        
+        m.setId(id);
         m.setFirstName(firstName);
         m.setSurname(surname);
         m.setPhoneNumber(phoneNumber);
@@ -192,9 +198,3 @@ public class MemberController {
     }
 
 }
-// Movie movie = new Movie(firstInput,year,service.selectGenre(genreInput));
-//      /*  movie.setTitle(firstInput);
-//        movie.setGenre(service.selectGenre(genreInput));
-//        movie.setProductionYear(year);*/
-//        mDao.createMovie(movie);
-//    }

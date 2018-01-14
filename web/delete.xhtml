@@ -31,8 +31,11 @@
                             <h:selectOneMenu value="#{memberController.id}">
                                 <f:selectItems value="#{memberController.memList}"/>
                             </h:selectOneMenu>
-                            <h:commandButton value="Delete" action="#{memberController.deleteMember}"/>
                         </p:panelGrid>
+                        
+                        <p:commandButton value="Delete" ajax="false" icon="ui-icon-check" action="#{memberController.deleteMember()}"/>
+
+                        
                     </h:form>
 
                 </ui:define>

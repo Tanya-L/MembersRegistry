@@ -7,6 +7,8 @@ import java.util.Date;
 import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 @Named(value = "memberController")
@@ -137,12 +139,26 @@ public class MemberController {
         m.setBirthDate(birthDate);
         m.setGender(gender);
         mf.create(m);
+        firstName=null;
+        surname=null;
+        phoneNumber=null;
+        email=null;
+        birthDate=null;
+        gender=null;
+        info("New member created and saved");
         return "form";
 
+    }
+    
+    public void info(String s) {
+        FacesContext.getCurrentInstance().addMessage(null, 
+                new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", s));
     }
 
     public void deleteMember() {
         mf.remove(mf.find(id));
+        info("Member delete from our club");
+        
     }
 
     public String updateMember() {
@@ -154,6 +170,13 @@ public class MemberController {
         m.setBirthDate(birthDate);
         m.setGender(gender);
         mf.edit(m);
+        firstName=null;
+        surname=null;
+        phoneNumber=null;
+        email=null;
+        birthDate=null;
+        gender=null;
+        info("Member information update");
         return "form";
 
     }

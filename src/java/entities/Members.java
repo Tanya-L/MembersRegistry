@@ -29,12 +29,12 @@ public class Members implements Serializable {
    
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date birthDate;
-    private Long phoneNumber;
+    private String phoneNumber;
 
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date registrationDate;
 
-    public Members(String firstName, String surname, String email, Date birthDate, Long phoneNumber, String gender) {
+    public Members(String firstName, String surname, String email, Date birthDate, String phoneNumber, String gender) {
         this.firstName = firstName;
         this.surname = surname;
         this.email = email;
@@ -104,11 +104,11 @@ public class Members implements Serializable {
         this.birthDate = birthDate;
     }
 
-    public Long getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Long phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

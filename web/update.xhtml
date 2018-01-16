@@ -51,7 +51,7 @@
                             <f:convertDateTime pattern="yyyy/MM/dd"/>
                         </p:inputText>
                         <h:outputText value="Phone number: " />
-                        <p:inputText id="phoneNumber" value="#{memberController.phoneNumber}" placeholder="ex. 07000000" />
+                        <p:inputMask id="phoneNumber" value="#{memberController.phoneNumber}"  mask="9999999999" placeholder="ex. 0730000000" />
 
                         <h:outputText value="Email: " />
                         <p:inputText id="email" value="#{memberController.email}" placeholder="ex. myemail@me.com" 

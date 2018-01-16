@@ -20,7 +20,7 @@ public class MemberController {
     private String email;
     private String gender;
     private Date birthDate;
-    private Long phoneNumber;
+    private String phoneNumber;
     private Long id;
     private List memList;
     private Members mem;
@@ -106,11 +106,11 @@ public class MemberController {
         this.birthDate = birthDate;
     }
 
-    public Long getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Long phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

@@ -10,7 +10,7 @@
     <f:view contentType="text/html">
     <h:head>
         <title>Java Stars</title>
-
+          
     </h:head>
     <h:body>
         <ui:composition template="layout.xhtml"> 
@@ -36,13 +36,14 @@
 
                     
                         <h:outputText value="Date of birth: " />
+                         
                         <p:inputText label="yyyy/mm/dd" id="birthDate"  value="#{memberController.birthDate}" placeholder="yyyy/MM/dd">
-                            <f:convertDateTime  pattern="yyyy/MM/dd"/>
+                            <f:convertDateTime pattern="yyyy/MM/dd"/>
                         </p:inputText>
                         
                        
                         <h:outputText value="Phone number: " />
-                        <p:inputText id="phoneNumber" value="#{memberController.phoneNumber}" placeholder="ex. 07000000" />
+                        <p:inputMask id="phoneNumber" value="#{memberController.phoneNumber}"  mask="9999999999" placeholder="ex. 0700000000" />
 
                         
                         <h:outputText value="Email: " />

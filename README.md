@@ -1,2 +1,2 @@
 # MembersRegistry
-Finale project Lexicon
+Final educational project (JAVA EE)

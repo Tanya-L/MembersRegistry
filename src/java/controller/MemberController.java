@@ -3,6 +3,7 @@ package controller;
 import entities.Members;
 import dao.MemberFacade;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import javax.inject.Named;
@@ -30,9 +31,16 @@ public class MemberController {
     @Inject
     MemberFacade mf;
 
+    private List<String> images;
+    
     public MemberController() {
+        images = Arrays.asList("mpt1.jpg", "mpt2.jpg", "mpt3.jpg");
     }
-
+    
+    public List<String> getImages() {
+        return images;
+    }
+    
     public List<Integer> getMemList() {
 
         memList = new ArrayList<>();
@@ -145,7 +153,7 @@ public class MemberController {
 
     }
     
-    private void clearForm (){
+    public void clearForm (){
         firstName=null;
         surname=null;
         phoneNumber=null;
@@ -172,6 +180,9 @@ public class MemberController {
         mf.remove(mf.find(id));
         info("Member information deleted");
         
+    }
+    public String showUs(){
+        return "group";
     }
 
     public String updateMember() {

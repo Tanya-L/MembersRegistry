@@ -17,11 +17,8 @@
                 <ui:define name="content">
                     <h:form >
 
-
-                        <h2>Welcome to Java Stars Secret Club
-                            <br/>
-                            Please, choose id of member you would like to delete</h2>
-
+                        <h3>
+                            Please choose id of member you would like to delete</h3>
 
                         <p:messages id="messages" showDetail="true"/>
 
@@ -35,6 +32,8 @@
                         </h:panelGrid>
                         
                         <p:commandButton value="Delete" ajax="false" icon="ui-icon-check" action="#{memberController.deleteMember()}"/>
+                        
+                        <p:commandButton value="Reset" ajax="false" icon="ui-icon-refresh" action="#{memberController.clearForm()}"/>
 
                         
                     </h:form>

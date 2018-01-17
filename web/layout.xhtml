@@ -13,42 +13,42 @@
     </h:head>
 
     <h:body>
-       <h:outputStylesheet library="css" name="style.css"  />
+        <h:outputStylesheet library="css" name="style.css"  />
 
         <p:layout fullPage="true">
 
-            <p:layoutUnit position="north" size="150" >
-                <p:graphicImage url="resources/image/javalogo1.png" height="100" /> 
-               
-               
+            <p:layoutUnit id="north" position="north" size="150" >
+                <p:graphicImage id="logo" url="resources/image/logo.png"/> 
+                <h2>Welcome to Java Stars Secret Club
+                </h2>
             </p:layoutUnit>
 
-            <p:layoutUnit position="south" size="100"  resizable="false">
-                Created by 
-                <p:button value="MPT-team 2018"  title="*Mehreen, *Pauline, *Tanya" />
+            <p:layoutUnit id="south" position="south" size="100" resizable="false">
+                <h:form>
+                Created by  
+                <p:commandButton value="MPT-team 2018"  title="**Mehreen, **Pauline, **Tanya" action="#{memberController.showUs()}" />
+               </h:form>
+                
             </p:layoutUnit>
 
-            <p:layoutUnit  id="testing" position="west" size="200">
-
+            <p:layoutUnit  id="west" position="west" size="250">
                 <h:form id="menuForm">
-                    
-                           
+
                     <p:menu>
-                    <p:menuitem value="Home" action="/form" update="messages" ajax='false' icon="ui-icon-home"/>  
-                    <p:menuitem value="Update Member" action="/update" update="messages" ajax='false' icon="ui-icon-arrowrefresh-1-w"/>
-                    <p:menuitem value="Delete Member" action="/delete" update="messages" ajax="false" icon="ui-icon-close"/>
-                     <p:menuitem value="Show all Members" action="/show" update="messages" ajax="false" icon="ui-icon-star"/>
+                        <p:menuitem value="Home" action="/form" update="messages" ajax='false' icon="ui-icon-home"/>  
+                        <p:menuitem value="Update Member" action="/update" update="messages" ajax='false' icon="ui-icon-arrowrefresh-1-w"/>
+                        <p:menuitem value="Delete Member" action="/delete" update="messages" ajax="false" icon="ui-icon-close"/>
+                        <p:menuitem value="Show all Members" action="/show" update="messages" ajax="false" icon="ui-icon-star"/>
                     </p:menu>
-                    
-
-                </h:form>  
+                </h:form> 
             </p:layoutUnit>
-
-            <p:layoutUnit class="center_back" position="center" styleClass="center">
+           
+            <p:layoutUnit class="center_back" id="center" position="center" styleClass="center">
                 <ui:insert class="content_background" name="content"> <ui:include src="/form.xhtml"/>
-            
                 </ui:insert>
             </p:layoutUnit>
+
+
 
         </p:layout>
 

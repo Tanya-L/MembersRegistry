@@ -16,11 +16,8 @@
         <ui:composition template="layout.xhtml"> 
             <ui:define name="content">
 <h:form>
-                    
-    
-                <h2>Welcome to Java Stars Secret Club
-                    <br/>
-                    Please, update a new member</h2>
+              <h3>
+                    Please choose id to update a new member</h3>
            
                         <h:panelGrid columns="2"  style="margin-bottom:10px" cellpadding="5">
 
@@ -71,7 +68,7 @@
                     
                     <p:commandButton value="Update" ajax="false" icon="ui-icon-check" action="#{memberController.updateMember()}"/>
 
-                    
+                    <p:commandButton value="Reset" ajax="false" icon="ui-icon-refresh" action="#{memberController.clearForm()}"/>
                 </h:form>
             </ui:define>
         </ui:composition>    

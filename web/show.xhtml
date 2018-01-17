@@ -18,11 +18,7 @@
                     <h:form>
 
 
-                        <h2>Welcome to Java Stars Secret Club
-                            <br/>
-                            Showing all members</h2>
-
-
+                        <h3>List of all members</h3>
 
                         <p:panelGrid columns="2"  style="margin-bottom:10px">
 
@@ -34,7 +30,7 @@
 
                                 <p:column headerText="First Name">
                                     <h:outputText value="#{members.firstName}"/>
-                                      
+
                                 </p:column>
 
                                 <p:column headerText="Surname">
@@ -43,9 +39,9 @@
 
                                 <p:column headerText="BirthDate">
                                     <h:outputText value="#{members.birthDate}"  >
-                                  <f:convertDateTime pattern="yyyy-MM-dd" />
+                                        <f:convertDateTime pattern="yyyy-MM-dd" />
                                     </h:outputText>
-                                 </p:column>
+                                </p:column>
 
                                 <p:column headerText="Phone Number">
                                     <h:outputText value="#{members.phoneNumber}" />
@@ -53,14 +49,14 @@
 
                                 <p:column headerText="Registration Date">
                                     <h:outputText value="#{members.registrationDate}" >
-                                 <f:convertDateTime pattern="yyyy-MM-dd" />
+                                        <f:convertDateTime pattern="yyyy-MM-dd" />
                                     </h:outputText>
                                 </p:column>
 
                                 <p:column headerText="Email">
                                     <h:outputText value="#{members.email}" />
                                 </p:column>
-                                
+
                                 <p:column headerText="Gender">
                                     <h:outputText value="#{members.gender}" />
                                 </p:column>

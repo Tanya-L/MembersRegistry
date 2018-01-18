@@ -25,22 +25,31 @@ public class MemberController {
     private Long id;
     private List memList;
     private Members mem;
-    
+    private String password;
+
     private List<Members> fullList;
-     
+
+    /* changes phonenomber data type from BIGINT to String (fixed in DataBase)
+    
+    ALTER TABLE members ADD COLUMN p varchar(40);
+    UPDATE members SET p = CAST(phonenumber AS char);
+    ALTER TABLE members DROP COLUMN phonenumber;
+    RENAME COLUMN members.p TO phonenumber;
+    
+     */
     @Inject
     MemberFacade mf;
 
     private List<String> images;
-    
+
     public MemberController() {
         images = Arrays.asList("mpt1.jpg", "mpt2.jpg", "mpt3.jpg");
     }
-    
+
     public List<String> getImages() {
         return images;
     }
-    
+
     public List<Integer> getMemList() {
 
         memList = new ArrayList<>();
@@ -58,13 +67,10 @@ public class MemberController {
         fullList = mf.findAll();
         return fullList;
     }
-    
 
     public void setFullList(List<Members> fullList) {
         this.fullList = fullList;
     }
-    
-   
 
     public String getFirstName() {
         return firstName;
@@ -152,47 +158,68 @@ public class MemberController {
         return "form";
 
     }
-    
-    public void clearForm (){
-        firstName=null;
-        surname=null;
-        phoneNumber=null;
-        email=null;
-        birthDate=null;
-        gender=null;
+
+    public String getPassword() {
+        return password;
     }
-    
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void clearForm() {
+        firstName = null;
+        surname = null;
+        phoneNumber = null;
+        email = null;
+        birthDate = null;
+        gender = null;
+    }
+
     public void info(String s) {
-        FacesContext.getCurrentInstance().addMessage(null, 
+        FacesContext.getCurrentInstance().addMessage(null,
                 new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", s));
     }
 
     public void error(String s) {
-        FacesContext.getCurrentInstance().addMessage(null, 
+        FacesContext.getCurrentInstance().addMessage(null,
                 new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", s));
     }
-    
+
     public void deleteMember() {
-           if (id == -1) {
+        if (id == -1) {
             this.error("You can not delete now, select an id first");
+            return;
+        }
+        if (! checkPassword(this.password)) {
+            this.error("Please, enter password");
             return;
         }
         mf.remove(mf.find(id));
         info("Member information deleted");
-        
+
     }
-    public String showUs(){
+
+    public String showUs() {
         return "group";
+    }
+
+    private boolean checkPassword(String p) {
+        return "123".equals(p);
     }
 
     public String updateMember() {
         if (id == -1) {
             this.error("You can not update now, select an id first");
-            return "form";
+            return "update";
         }
-        
+        if (!checkPassword(this.password)) {
+            this.error("Please, enter password");
+            return "update";
+        }
+
         Members m = new Members();
-        
+
         m.setId(id);
         m.setFirstName(firstName);
         m.setSurname(surname);
@@ -203,7 +230,7 @@ public class MemberController {
         mf.edit(m);
         clearForm();
         info("Member information update");
-        return "form";
+        return "home";
 
     }
 
@@ -212,7 +239,7 @@ public class MemberController {
             clearForm();
             return;
         }
-        
+
         mem = mf.find(id);
         this.firstName = mem.getFirstName();
         this.surname = mem.getSurname();

@@ -32,6 +32,11 @@
                             </h:selectOneMenu>
                         </h:panelGrid>
                         
+                        <div style="margin-bottom: 16px;">
+                            Please, enter password
+                            <h:inputSecret id="password" value="#{memberController.password}" />
+                        </div>
+                        
                         <p:commandButton value="Delete" ajax="false" icon="ui-icon-trash" action="#{memberController.deleteMember()}"/>
                         
                         <p:commandButton value="Reset" ajax="false" icon="ui-icon-refresh" action="#{memberController.clearForm()}"/>

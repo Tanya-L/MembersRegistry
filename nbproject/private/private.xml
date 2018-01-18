@@ -4,14 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/tanya/NetBeansProjects/MemberRegistry/web/resources/css/style.css</file>
-            <file>file:/Users/tanya/NetBeansProjects/MemberRegistry/src/java/dao/MemberFacade.java</file>
-            <file>file:/Users/tanya/NetBeansProjects/MemberRegistry/src/java/controller/MemberController.java</file>
+            <file>file:/Users/tanya/NetBeansProjects/MemberRegistry/src/java/controller/ImagesView.java</file>
             <file>file:/Users/tanya/NetBeansProjects/MemberRegistry/web/layout.xhtml</file>
+            <file>file:/Users/tanya/NetBeansProjects/MemberRegistry/src/java/controller/MemberController.java</file>
             <file>file:/Users/tanya/NetBeansProjects/MemberRegistry/web/form.xhtml</file>
             <file>file:/Users/tanya/NetBeansProjects/MemberRegistry/web/delete.xhtml</file>
+            <file>file:/Users/tanya/NetBeansProjects/MemberRegistry/web/home.xhtml</file>
             <file>file:/Users/tanya/NetBeansProjects/MemberRegistry/web/update.xhtml</file>
-            <file>file:/Users/tanya/NetBeansProjects/MemberRegistry/web/index.xhtml</file>
             <file>file:/Users/tanya/NetBeansProjects/MemberRegistry/web/show.xhtml</file>
+            <file>file:/Users/tanya/NetBeansProjects/MemberRegistry/src/java/controller/UserLoginView.java</file>
         </group>
     </open-files>
 </project-private>

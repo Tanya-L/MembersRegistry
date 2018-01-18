@@ -20,23 +20,23 @@
             <p:layoutUnit id="north" position="north" size="150" >
                 <p:graphicImage id="logo" url="resources/image/logo.png"/> 
                 <div style="text-align: center;">
-                <h2>Welcome to Java Stars Secret Club</h2>
+                    <h2>Welcome to Java Stars Secret Club</h2>
                 </div>
             </p:layoutUnit>
 
             <p:layoutUnit id="south" position="south" size="100" resizable="false">
                 <h:form>
                     Created by  
-           <p:commandButton value="MPT-team 2018"  title="**Mehreen, **Pauline, **Tanya" action="#{memberController.showUs()}" />
-                <div class="footer-social">
-                    <span>Connect with us:</span> <h:graphicImage url="/resources/image/github-logo.png" />
-                    <a href="https://github.com/SyedaMehreen"> Mehreen's Github </a> | 
-                    <a href="https://github.com/Mamilopa"> Pauline's github</a> | 
-                    <a href="https://github.com/Tanya-L"> Tanya's github</a> 
+                    <p:commandButton value="MPT-team 2018"  title="**Mehreen, **Pauline, **Tanya" action="#{memberController.showUs()}" />
+                    <div class="footer-social" style="margin-top: 16px;">
+                        <span>Connect with us:</span> <h:graphicImage url="/resources/image/github-logo.png" />
+                        <a href="https://github.com/SyedaMehreen"> Mehreen's Github </a> | 
+                        <a href="https://github.com/Mamilopa"> Pauline's github</a> | 
+                        <a href="https://github.com/Tanya-L"> Tanya's github</a> 
                     </div>
 
-               </h:form>
-                
+                </h:form>
+
             </p:layoutUnit>
 
             <p:layoutUnit  id="west" position="west" size="250">
@@ -51,7 +51,7 @@
                     </p:menu>
                 </h:form> 
             </p:layoutUnit>
-           
+
             <p:layoutUnit class="center_back" id="center" position="center" styleClass="center">
                 <ui:insert class="content_background" name="content"> <ui:include src="/form.xhtml"/>
                 </ui:insert>

@@ -11,36 +11,38 @@ div.ui-widget-content {
 
 #north{
     background-image: url("../../resources/image/stars.jpg");
- 
+
 }
 #logo{
     position: fixed;
     height: 120px;
     width: 120px;
- }
- #west{
-     border: 0px;
- }
- #east{
-     border: 0px;
- }
- #south{
-     border: 0px;
- }
- #center{
-     border: 0px;
- }
- h2{
-     font-size: 40px;
-     color: slategrey;
-     margin: 35px 100px 10px 400px;
-     
- }
- h3{
-     font-size: 20px;
-     color: slategrey;
- }
- caption{
-      height: 10px;
+}
+#west{
+    border: 0px;
+}
+#east{
+    border: 0px;
+}
+#south{
+    border: 0px;
+}
+#center{
+    border: 0px;
+}
+#java4women{
+    margin: 35px 0px 10px 0px; 
+
+}
+h2,h1{
+    font-size: 40px;
+    color: slategrey;
+}
+h3{
+    font-size: 20px;
+    color: slategrey;
+}
+caption{
+    height: 10px;
     width: 10px;
- }
+}

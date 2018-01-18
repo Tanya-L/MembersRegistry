@@ -10,6 +10,7 @@
     <f:view contentType="text/html">
         <h:head>
             <title>Java Stars</title>
+            
 
         </h:head>
         <h:body>
@@ -31,7 +32,7 @@
                             </h:selectOneMenu>
                         </h:panelGrid>
                         
-                        <p:commandButton value="Delete" ajax="false" icon="ui-icon-check" action="#{memberController.deleteMember()}"/>
+                        <p:commandButton value="Delete" ajax="false" icon="ui-icon-trash" action="#{memberController.deleteMember()}"/>
                         
                         <p:commandButton value="Reset" ajax="false" icon="ui-icon-refresh" action="#{memberController.clearForm()}"/>
 
@@ -40,6 +41,8 @@
 
                 </ui:define>
             </ui:composition>    
+          
+            
         </h:body>
     </f:view>
 </html>

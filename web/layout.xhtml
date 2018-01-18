@@ -19,14 +19,22 @@
 
             <p:layoutUnit id="north" position="north" size="150" >
                 <p:graphicImage id="logo" url="resources/image/logo.png"/> 
-                <h2>Welcome to Java Stars Secret Club
-                </h2>
+                <div style="text-align: center;">
+                <h2>Welcome to Java Stars Secret Club</h2>
+                </div>
             </p:layoutUnit>
 
             <p:layoutUnit id="south" position="south" size="100" resizable="false">
                 <h:form>
-                Created by  
-                <p:commandButton value="MPT-team 2018"  title="**Mehreen, **Pauline, **Tanya" action="#{memberController.showUs()}" />
+                    Created by  
+           <p:commandButton value="MPT-team 2018"  title="**Mehreen, **Pauline, **Tanya" action="#{memberController.showUs()}" />
+                <div class="footer-social">
+                    <span>Connect with us:</span> <h:graphicImage url="/resources/image/github-logo.png" />
+                    <a href="https://github.com/SyedaMehreen"> Mehreen's Github </a> | 
+                    <a href="https://github.com/Mamilopa"> Pauline's github</a> | 
+                    <a href="https://github.com/Tanya-L"> Tanya's github</a> 
+                    </div>
+
                </h:form>
                 
             </p:layoutUnit>
@@ -35,9 +43,10 @@
                 <h:form id="menuForm">
 
                     <p:menu>
-                        <p:menuitem value="Home" action="/form" update="messages" ajax='false' icon="ui-icon-home"/>  
+                        <p:menuitem value="Home" action="/home" update="messages" ajax='false' icon="ui-icon-home"/>  
+                        <p:menuitem value="Register New Member" action="/form" update="messages" ajax='false' icon="ui-icon-plus"/>                          
                         <p:menuitem value="Update Member" action="/update" update="messages" ajax='false' icon="ui-icon-arrowrefresh-1-w"/>
-                        <p:menuitem value="Delete Member" action="/delete" update="messages" ajax="false" icon="ui-icon-close"/>
+                        <p:menuitem value="Delete Member" action="/delete" update="messages" ajax="false" icon="ui-icon-trash"/>
                         <p:menuitem value="Show all Members" action="/show" update="messages" ajax="false" icon="ui-icon-star"/>
                     </p:menu>
                 </h:form> 

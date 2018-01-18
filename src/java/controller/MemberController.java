@@ -173,7 +173,7 @@ public class MemberController {
     }
     
     public void deleteMember() {
-        if (id == -1) {
+           if (id == -1) {
             this.error("You can not delete now, select an id first");
             return;
         }

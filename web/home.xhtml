@@ -15,18 +15,13 @@
     <h:body>
         <ui:composition template="layout.xhtml"> 
             <ui:define name="content">
-                
-                <h3>Meet our team!</h3>
-                    
-
-                <p:imageSwitch effect="fade" id="fadeEffect">
-                    <ui:repeat value="#{memberController.images}" var="image" id="fadeEffectImages">
-                        <p:graphicImage name="group/#{image}" id="image" width="75%"/>
-                    </ui:repeat>
-                </p:imageSwitch>
-                
-                 
-                
+                <div style="text-align: center;">
+                <h1>Hello from Java Star Club </h1>
+                <p>
+                <p:link value= "Please register in our club" outcome="/form" />
+                </p>
+                <p:graphicImage id="java4women" url="resources/image/java4women.jpg"/>
+                </div>
             </ui:define>
         </ui:composition>    
     </h:body>
